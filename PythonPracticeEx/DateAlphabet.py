@@ -1,6 +1,6 @@
 Number_dict = {0 :'zero', 1:'One', 2:'Two',3:'Three',4:'Four',5:'Five',6:'Six',7:'Seven',8:'Eight',9:'Nine',10:'Ten',11:'Eleven',12:'twelve',13:'Thirteen',14:'Fourteen',15:'Fifteen',16:'Sixteen',17:'Seventeen',18:'Eighteen',19:'Nineteen'}
 Length_dict ={3:'Hundred', 4:'Thousand', 5:'Thousand', 6:'lac',7:'lac'}
-Tens_dict = {20:'Twenty',30:'Thirty',40:'Fourty',50:'Fifty',60:'Sixty',70:'Seventy',80:'Eighty',90:'Ninghty'}
+Tens_dict = {20:'Twenty',30:'Thirty',40:'Fourty',50:'Fifty',60:'Sixty',70:'Seventy',80:'Eighty',90:'Ninety'}
 
 #Date conversion
 def DateMonthConvert(date_val):
@@ -27,15 +27,27 @@ def YearConvert(year_val):
     else:
         return DateMonthConvert(int(year_val))
         
+Flag = True
+while Flag:
+    try:
+        User_Date =input("Enter user Date :")
+        Flag= False
+        Date_list=User_Date.split("-")
+        date = int(Date_list[0])
+        month = int(Date_list[1])
+        year = Date_list[2]
+        print(DateMonthConvert(date)+" "+DateMonthConvert(month)+" "+YearConvert(year))
+    except ValueError:
+        print("Enter proper Format DD-MM-YYYY")
+        continue
 
-User_Date =input("Enter user Date :")
 
-Date_list=User_Date.split("-")
-date = int(Date_list[0])
-month = int(Date_list[1])
-year = Date_list[2]
 
-print(DateMonthConvert(date)+" "+DateMonthConvert(month)+" "+YearConvert(year))
+    
+    
+
+
+
 
 
 
